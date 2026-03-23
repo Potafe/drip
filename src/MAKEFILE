@@ -1,0 +1,16 @@
+.PHONY: all fmt lint test run build
+
+fmt:
+	go fmt ./...
+
+lint:
+	golangci-lint run
+
+test:
+	go test ./... -v
+
+run:
+	go run ./cmd/app
+
+build:
+	go build -o bin/app ./cmd/app

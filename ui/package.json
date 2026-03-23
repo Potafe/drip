@@ -1,0 +1,47 @@
+{
+  "name": "drip-ui",
+  "version": "0.0.1",
+  "description": "UI for DRIP (Detection, Risk & Investigation Platform)",
+  "repository": "https://github.com/Potafe/drip",
+  "author": "Potafe",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^16.2.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.1.0",
+    "eslint-config-next": "^16.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.1"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:sarif": "eslint . --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif",
+    "lint-next": "next lint",
+    "postinstall": "husky"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{js,mjs,cjs,json,css,md}": [
+      "prettier --write"
+    ]
+  }
+}
